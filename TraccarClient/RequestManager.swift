@@ -20,7 +20,7 @@ public class RequestManager: NSObject {
     
     public static func sendRequest(_ url: URL, completionHandler handler: @escaping (Bool) -> Void) {
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "GET"
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main, completionHandler: {(response, data, connectionError) -> Void in
             handler(data != nil)
         })
